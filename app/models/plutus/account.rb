@@ -30,6 +30,9 @@ module Plutus
   #
   # @author Michael Bulat
   class Account < ActiveRecord::Base
+
+    include Enumerable
+    
     has_many :credit_amounts, :extend => AmountsExtension, :class_name => 'Plutus::CreditAmount'
     has_many :debit_amounts, :extend => AmountsExtension, :class_name => 'Plutus::DebitAmount'
     has_many :credit_entries, :through => :credit_amounts, :source => :entry, :class_name => 'Plutus::Entry'
