@@ -13,7 +13,7 @@ class CreatePlutusTables < ActiveRecord::Migration
       t.string :description
       t.integer :commercial_document_id
       t.string :commercial_document_type
-      t.date :transaction_date
+      t.date :effective_date
 
       t.timestamps
     end
